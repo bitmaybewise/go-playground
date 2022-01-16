@@ -27,4 +27,15 @@ func main() {
 	numbers.Del(1)
 	fmt.Printf("numbers:\t%s\n", numbers)
 	fmt.Printf("size:\t\t%d\n", numbers.Len())
+
+	fmt.Println("immutable set")
+	immuset := set.NewImmutable[string]()
+	fmt.Printf("immuset:\t%q\n", immuset)
+	immuset = immuset.Add("hello")
+	immuset = immuset.Add("world")
+	immuset = immuset.Add("hercules")
+	fmt.Printf("immuset:\t%q\n", immuset)
+	immuset = immuset.Del("world")
+	fmt.Printf("words:\t\t%s\n", immuset)
+	fmt.Printf("size:\t\t%d\n", immuset.Len())
 }
